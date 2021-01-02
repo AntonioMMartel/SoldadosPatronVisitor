@@ -20,7 +20,7 @@ public class Main {
         Soldier guerreroManolo = new Warrior("Manolo", 350, 0, 0);
         Soldier guerreroFederico = new Warrior("Federico", 350, 0, 0);
         guerreroManolo.attacks(guerreroFederico);
-        Weapon alabarda1 = new Sword("Alabarda",100, WEAPON_CLASS.WARRIOR);
+        Weapon alabarda1 = new Sword("Alabarda",100);
         guerreroManolo.equips(alabarda1);
         guerreroFederico.equips(alabarda1);
         guerreroManolo.attacks(guerreroFederico);

@@ -6,16 +6,16 @@
 
 package soldadospatronvisitor.Weapons;
 
-import soldadospatronvisitor.Soldiers.Soldier;
+import static soldadospatronvisitor.Weapons.WEAPON_CLASS.ARCHER;
 
 /**
  * @author Antonio Miguel Martel
  */
-public class Sword extends Weapon{
-
-    public Sword(String name, int damage) {
+public class Bow extends Weapon{
+    
+        public Bow(String name, int damage) {
         // Rango= 1 casilla.
-        super(name, 1, damage, WEAPON_CLASS.WARRIOR);
+        super(name, 4, damage, WEAPON_CLASS.ARCHER);
     }
     
     

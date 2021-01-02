@@ -6,28 +6,27 @@
 
 package soldadospatronvisitor.Soldiers;
 
+
 import patronVisitor.MovementMechanics;
-import soldadospatronvisitor.Weapons.Sword;
+import soldadospatronvisitor.Weapons.Bow;
 import soldadospatronvisitor.Weapons.Weapon;
 
 /**
  * @author Antonio Miguel Martel
  */
-public class Warrior extends Soldier {
-
-    public Warrior(String name, int health, int posx, int posy) {
-        super(name, health, posx, posy, 2);
+public class Archer extends Soldier {
+    
+     public Archer(String name, int health, int posx, int posy) {
+        super(name, health, posx, posy, 6);
     }
-    
-    
-    
+
     
     @Override
     public void equips(Weapon weapon) {
-        if(weapon instanceof Sword) {
+        if(weapon instanceof Bow) {
             if(weapon.isEquippedBy(this)) this.weapon = weapon;
         } else {
-            System.out.println("El guerrero solo puede usar un arma para guerreros.");
+            System.out.println("El arquero solo puede usar un arma para arqueros.");
         }        
     }
 

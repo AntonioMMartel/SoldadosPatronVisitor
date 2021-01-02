@@ -7,6 +7,7 @@
 package soldadospatronvisitor.Soldiers;
 
 import static java.lang.Math.abs;
+import patronVisitor.MovementMechanics;
 import soldadospatronvisitor.Weapons.Weapon;
 
 /**
@@ -36,6 +37,9 @@ public abstract class Soldier {
     
     //Cada uno equipa un arma determinada
     public abstract void equips(Weapon weapon);
+    
+    //Aplicamos mecanicas
+    public abstract void applyMovementMechanics(MovementMechanics movementMechanics);
     
     //Mover a una posicion
     public void moveTo(int posx, int posy) {
@@ -75,7 +79,6 @@ public abstract class Soldier {
 
     
     //Getters y setters
-    
     public void setName(String name) {
         this.name = name;
     }
