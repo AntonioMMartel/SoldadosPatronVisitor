@@ -24,6 +24,8 @@ public class Main {
         guerreroManolo.equips(alabarda1);
         guerreroFederico.equips(alabarda1);
         guerreroManolo.attacks(guerreroFederico);
+        guerreroFederico.moveTo(1, 1);
+        guerreroManolo.attacks(guerreroFederico);
     }
 
 }

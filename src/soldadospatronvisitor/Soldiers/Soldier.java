@@ -37,16 +37,22 @@ public abstract class Soldier {
     //Cada uno equipa un arma determinada
     public abstract void equips(Weapon weapon);
     
-    //Cada uno se mueve de una forma determinada.
+    //Mover a una posicion
     public void moveTo(int posx, int posy) {
         if (this.canMove(posx, posy)) {
             this.position.setPosx(posx);
             this.position.setPosy(posy);
+            System.out.println("El soldado " + this.name + " se mueve a la posicion: "
+                    + "(" + posx + ", " + posy + ")");
         } else {
             System.out.println("No se ha podido mover el soldado a la posicion: "
                     + "(" + posx + ", " + posy + ")");
         }
     }
+    
+    // Patrullar entre dos posiciones. Supon que este lo quiero implementar
+    // empleando el patron visitor.
+    public abstract void patrol(int posx1, int posy1, int posx2, int posy2);
     
     //Clase que me dice si me puedo mover a la posicion especificada.
     private boolean canMove(int posx, int posy ) {
@@ -85,8 +91,6 @@ public abstract class Soldier {
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
-    
-    
     
     public String getName() {
         return name;
