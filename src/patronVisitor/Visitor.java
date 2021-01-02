@@ -13,9 +13,8 @@ import soldadospatronvisitor.Soldiers.Warrior;
  * @author Antonio Miguel Martel
  * Esta interfaz se me amplia cunado añado mas soldados.
  */
-public interface MovementMechanics {
-    public void applyMovement(Archer archer);
-    public void applyMovement(Warrior warrior);
-    
+public interface Visitor {
+    public void visit(Archer archer);
+    public void visit(Warrior warrior);
     
 }

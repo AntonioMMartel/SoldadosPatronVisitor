@@ -7,8 +7,8 @@
 package soldadospatronvisitor.Soldiers;
 
 import static java.lang.Math.abs;
-import patronVisitor.MovementMechanics;
 import soldadospatronvisitor.Weapons.Weapon;
+import patronVisitor.Visitor;
 
 /**
  * @author Antonio Miguel Martel
@@ -38,8 +38,10 @@ public abstract class Soldier {
     //Cada uno equipa un arma determinada
     public abstract void equips(Weapon weapon);
     
-    //Aplicamos mecanicas
-    public abstract void applyMovementMechanics(MovementMechanics movementMechanics);
+    // Teletransportar al soldado a unas coordenadas aleatorias.
+    //empleando el patron visitor. SE IMPLEMENTA A NIVEL DEL MAIN
+    //Aplicamos visitor
+    public abstract void accept(Visitor visitor);
     
     //Mover a una posicion
     public void moveTo(int posx, int posy) {
@@ -53,10 +55,6 @@ public abstract class Soldier {
                     + "(" + posx + ", " + posy + ")");
         }
     }
-    
-    // Patrullar entre dos posiciones. Supon que este lo quiero implementar
-    // empleando el patron visitor.
-    public abstract void patrol(int posx1, int posy1, int posx2, int posy2);
     
     //Clase que me dice si me puedo mover a la posicion especificada.
     private boolean canMove(int posx, int posy ) {
@@ -94,6 +92,8 @@ public abstract class Soldier {
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
+    
+    
     
     public String getName() {
         return name;

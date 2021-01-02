@@ -6,6 +6,7 @@
 
 package soldadospatronvisitor;
 
+import patronVisitor.*;
 import soldadospatronvisitor.Soldiers.*;
 import soldadospatronvisitor.Weapons.*;
 
@@ -16,6 +17,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+        Visitor visitor = new RandomTeleportVisitor(2);
         
         Soldier guerreroManolo = new Warrior("Manolo", 350, 0, 0);
         Soldier guerreroFederico = new Warrior("Federico", 350, 0, 0);
@@ -26,6 +28,8 @@ public class Main {
         guerreroManolo.attacks(guerreroFederico);
         guerreroFederico.moveTo(1, 1);
         guerreroManolo.attacks(guerreroFederico);
+        
+        guerreroManolo.accept(visitor);
     }
 
 }

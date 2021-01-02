@@ -7,9 +7,9 @@
 package soldadospatronvisitor.Soldiers;
 
 
-import patronVisitor.MovementMechanics;
 import soldadospatronvisitor.Weapons.Bow;
 import soldadospatronvisitor.Weapons.Weapon;
+import patronVisitor.Visitor;
 
 /**
  * @author Antonio Miguel Martel
@@ -31,14 +31,13 @@ public class Archer extends Soldier {
     }
 
     @Override
-    public void patrol(int posx1, int posy1, int posx2, int posy2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
-    @Override
-    public void applyMovementMechanics(MovementMechanics movementMechanics) {
-        movementMechanics.applyMovement(this);
-    }
+
+    
+
     
     
 }
